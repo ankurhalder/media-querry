@@ -1,0 +1,61 @@
+$breakpoint-phone: 450px;
+$breakpoint-tablet: 768px;
+$breakpoint-large-tablet: 1000px;
+$breakpoint-desktop: 1366px;
+$breakpoint-desktop-wide: 1566px;
+.media-query-sample {
+  @media (max-width: $breakpoint-desktop-wide) {
+  }
+  @media (max-width: $breakpoint-desktop) {
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+  }
+  @media (max-width: $breakpoint-tablet) {
+  }
+  @media (max-width: $breakpoint-phone) {
+  }
+  @media screen and (max-width: 1024px) and (max-height: 1366px) and (orientation: portrait) {
+  }
+  @media screen and (max-width: 1366px) and (max-height: 1024px) and (orientation: landscape) {
+  }
+  @media screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+  }
+  @media screen and (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+  }
+  @media screen and (max-width: 450px) and (max-height: 1000px) and (orientation: portrait) {
+  }
+  @media screen and (max-width: 1000px) and (max-height: 450px) and (orientation: landscape) {
+  }
+  @media screen and (max-width: 400px) and (max-height: 850px) and (orientation: portrait) {
+  }
+  @media screen and (max-width: 850px) and (max-height: 400px) and (orientation: landscape) {
+  }
+
+  @media screen and (max-width: 450px) and (max-height: 1000px) and (orientation: portrait) {
+    /* Styles for portrait orientation with a maximum width of 450px and maximum height of 1000px */
+  }
+  @media screen and (max-width: 1000px) and (max-height: 450px) and (orientation: landscape) {
+    /* Styles for landscape orientation with a maximum width of 1000px and maximum height of 450px */
+  }
+
+  @media screen and (max-width: 850px) and (max-height: 400px) and (orientation: portrait) {
+    /* Styles for portrait orientation with a maximum width of 850px and maximum height of 400px */
+  }
+  @media screen and (max-width: 400px) and (max-height: 850px) and (orientation: landscape) {
+    /* Styles for landscape orientation with a maximum width of 400px and maximum height of 850px */
+  }
+
+  @media screen and (max-width: 1024px) and (max-height: 1366px) and (orientation: portrait) {
+    /* Styles for portrait orientation with a maximum width of 1024px and maximum height of 1366px */
+  }
+  @media screen and (max-width: 1366px) and (max-height: 1024px) and (orientation: landscape) {
+    /* Styles for landscape orientation with a maximum width of 1366px and maximum height of 1024px */
+  }
+
+  @media screen and (max-width: 1024px) and (max-height: 768px) and (orientation: portrait) {
+    /* Styles for portrait orientation with a maximum width of 1024px and maximum height of 768px */
+  }
+  @media screen and (max-width: 768px) and (max-height: 1024px) and (orientation: landscape) {
+    /* Styles for landscape orientation with a maximum width of 768px and maximum height of 1024px */
+  }
+}

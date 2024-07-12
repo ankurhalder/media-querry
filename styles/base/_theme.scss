@@ -1,0 +1,40 @@
+:root {
+  .theme-dark {
+    --background-color: #0c0c1d;
+    --background: white;
+    // --background-1: #f0eada;
+    --background-1: #b0c4de;
+    --text-color: white;
+    --text-color-1: #f3f3f3;
+    --text-color-2: #ffffff09;
+    --text-color-3: #aaa;
+    --text-color-4: #e5e5e5;
+    --text-color-inverse: black;
+    --text-color-inverse-1: #3a3a3a;
+    --shadow-medium: rgba(0, 0, 0, 0.5);
+    --shadow-low: rgba(0, 0, 0, 0.2);
+    --shadow-medium-inverse: rgba(255, 255, 255, 0.5);
+    --shadow-low-inverse: rgba(255, 255, 255, 0.2);
+    --link-color: aqua;
+    --progress-green: #0044ff;
+  }
+
+  .theme-light {
+    --background-color: #b0c4de;
+    --background: black;
+    --background-1: #0c0c1d;
+    --text-color: black;
+    --text-color-1: #4b4b4b;
+    --text-color-2: #aaa;
+    --text-color-3: #5c5757;
+    --text-color-4: #3a3a3a;
+    --text-color-inverse: white;
+    --text-color-inverse-1: #e5e5e5;
+    --shadow-medium: rgba(225, 225, 225, 0.5);
+    --shadow-low: rgba(225, 225, 225, 0.2);
+    --shadow-medium-inverse: rgba(0, 0, 0, 0.5);
+    --shadow-low-inverse: rgba(0, 0, 0, 0.2);
+    --link-color: #0072ff;
+    --progress-green: #0072ff;
+  }
+}

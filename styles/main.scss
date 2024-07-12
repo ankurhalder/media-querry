@@ -1,0 +1,21 @@
+@import "vendors/manifest";
+@import "utilities/manifest";
+@import "base/manifest";
+@import "mixins/manifest";
+@import "containers/manifest";
+@import "components/manifest";
+@import "pages/manifest";
+@import "pieces/manifest";
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--background-color);
+  transition: all 0.5s ease-in-out;
+}
+section {
+  height: 100dvh;
+  // scroll-snap-align: start;
+  // scroll-snap-align: center;
+}

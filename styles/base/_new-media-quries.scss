@@ -1,0 +1,144 @@
+// Define breakpoints
+$breakpoints: (
+  portrait: (
+    1566px: 800px,
+    1366px: 768px,
+    1024px: 1366px,
+    768px: 1024px,
+    430px: 932px,
+    414px: 896px,
+    390px: 844px,
+    375px: 812px,
+    360px: 760px,
+  ),
+  landscape: (
+    800px: 1566px,
+    768px: 1366px,
+    1366px: 1024px,
+    1024px: 768px,
+    932px: 430px,
+    896px: 414px,
+    844px: 390px,
+    812px: 375px,
+    760px: 360px,
+  ),
+);
+
+// Helper function to find nearest breakpoint
+@function find-nearest-breakpoint($map, $value) {
+  $nearest: null;
+  $min-diff: null;
+
+  @each $key, $val in $map {
+    $diff: abs($key - $value);
+
+    @if $min-diff == null or $diff < $min-diff {
+      $min-diff: $diff;
+      $nearest: $key;
+    }
+  }
+
+  @return $nearest;
+}
+
+// Adjusted responsive mixin using helper function
+@mixin responsive($width, $height, $orientation: portrait) {
+  // Determine nearest breakpoints
+  $breakpoint-map: map-get($breakpoints, $orientation);
+  $nearest-width: find-nearest-breakpoint($breakpoint-map, $width);
+  $nearest-height: null;
+
+  @if $orientation == landscape {
+    $nearest-height: find-nearest-breakpoint($breakpoint-map, $height);
+  }
+
+  // Generate media query
+  @if $orientation == portrait {
+    $min-width: $nearest-width;
+    $max-width: map-get($breakpoint-map, $nearest-width);
+
+    @media (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  } @else if $orientation == landscape {
+    $min-width: map-get($breakpoint-map, $nearest-height);
+    $max-width: $nearest-height;
+
+    @media (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  }
+}
+
+// Example usage for each breakpoint
+@include responsive(1566px, 800px, portrait) {
+  /* Styles for 1566x800 portrait */
+}
+
+@include responsive(800px, 1566px, landscape) {
+  /* Styles for 1566x800 landscape */
+}
+
+@include responsive(1366px, 768px, portrait) {
+  /* Styles for 1366x768 portrait */
+}
+
+@include responsive(768px, 1366px, landscape) {
+  /* Styles for 1366x768 landscape */
+}
+
+@include responsive(1024px, 1366px, portrait) {
+  /* Styles for 1024x1366 portrait */
+}
+
+@include responsive(1366px, 1024px, landscape) {
+  /* Styles for 1024x1366 landscape */
+}
+
+@include responsive(768px, 1024px, portrait) {
+  /* Styles for 768x1024 portrait */
+}
+
+@include responsive(1024px, 768px, landscape) {
+  /* Styles for 768x1024 landscape */
+}
+
+@include responsive(430px, 932px, portrait) {
+  /* Styles for 430x932 portrait */
+}
+
+@include responsive(932px, 430px, landscape) {
+  /* Styles for 430x932 landscape */
+}
+
+@include responsive(414px, 896px, portrait) {
+  /* Styles for 414x896 portrait */
+}
+
+@include responsive(896px, 414px, landscape) {
+  /* Styles for 414x896 landscape */
+}
+
+@include responsive(390px, 844px, portrait) {
+  /* Styles for 390x844 portrait */
+}
+
+@include responsive(844px, 390px, landscape) {
+  /* Styles for 390x844 landscape */
+}
+
+@include responsive(375px, 812px, portrait) {
+  /* Styles for 375x812 portrait */
+}
+
+@include responsive(812px, 375px, landscape) {
+  /* Styles for 375x812 landscape */
+}
+
+@include responsive(360px, 760px, portrait) {
+  /* Styles for 360x760 portrait */
+}
+
+@include responsive(760px, 360px, landscape) {
+  /* Styles for 360x760 landscape */
+}
